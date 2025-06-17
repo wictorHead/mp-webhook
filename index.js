@@ -4,7 +4,7 @@ const axios = require("axios");
 const app = express();
 app.use(express.json());
 
-const TOKEN_MP = "APP_USR-8581410906528367-061713-ca153ee00cb409a001997f2e20d896da-2448358894";
+const TOKEN_MP = process.env.MP_ACCESS_TOKEN;
 
 app.post("/webhook", async (req, res) => {
   const paymentId = req.body.data?.id;
